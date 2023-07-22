@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <!-- 文档标题-->
+  <title>${title || '文档'}</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+  <!-- ${css}用引号包着也能被正确替换 -->
+  <link rel="stylesheet" href="../html-component/${css}.css">
+</head>
+
+<body>
+  <style>
+    body {
+      padding: 0 10px;
+    }
+  </style>
+  <!-- 插入主题样式 -->
+  <!-- <style>
+    ${css}
+  </style> -->
+  <!-- 插入marked转换后的html -->
+  <div class="markdown-body">${mdHtml}</div>
+</body>
+
+</html>

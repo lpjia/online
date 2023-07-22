@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <!-- 文档标题-->
+  <title>包含块 简单总结</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+  <!-- theme1用引号包着也能被正确替换 -->
+  <link rel="stylesheet" href="../html-component/theme1.css">
+</head>
+
+<body>
+  <style>
+    body {
+      padding: 0 10px;
+    }
+  </style>
+  <!-- 插入主题样式 -->
+  <!-- <style>
+    theme1
+  </style> -->
+  <!-- 插入marked转换后的html -->
+  <div class="markdown-body"><ul>
+<li><p>根元素</p>
+<ol>
+<li>初始包含块, 大小就是视口的大小;
+它是作为元素绝对定位和固定定位的参照物。</li>
+</ol>
+</li>
+<li><p>非根元素</p>
+<ol>
+<li><p>元素的 position 是 relative 或 static(默认值), 包含块是最近的块盒的内容盒</p>
+</li>
+<li><p>元素的 position 是 fixed, 包含块是视口</p>
+</li>
+<li><p>元素的 position 是 absolute, 包含块是向上找祖先中第一个定位元素的填充盒</p>
+</li>
+<li><p>元素的 position 是 absolute 或 fixed，包含块也可能是满足以下条件的最近父元素的填充盒</p>
+<ul>
+<li>transform 或 perspective 的值不是 none</li>
+<li>will-change 的值是 transform 或 perspective</li>
+<li>filter 的值不是 none 或 will-change 的值是 filter(只在 Firefox 下生效).</li>
+<li>contain 的值是 paint (例如: contain: paint;)</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+</div>
+</body>
+
+</html>

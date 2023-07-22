@@ -1,0 +1,21 @@
+{
+  "name": "md2html",
+  "version": "0.1.0",
+  "description": "",
+  "main": "md2html.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "go": "node md2html.js",
+    "clean": "rimraf node_modules"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "marked": "~4.2"
+  },
+  "devDependencies": {
+    "@types/ejs": "^3.1.2",
+    "@types/node": "^20.4.4",
+    "ejs": "^3.1.9"
+  }
+}
