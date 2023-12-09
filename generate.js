@@ -4,7 +4,8 @@ const ejs = require('ejs');
 
 const getTemplateData = (list) => {
   list.forEach(item => {
-    item.txt = item.name.substring(0, item.name.lastIndexOf("."))
+    // item.txt = item.name.substring(0, item.name.lastIndexOf("."))
+    item.txt = item.name.split('.').shift()
     if (item.name.includes('.pdf')) {
       item.fileType = 'pdf'
       item.url = `pdf_view/web/viewer.html?file=../../output/${item.name}`

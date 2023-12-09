@@ -11,11 +11,13 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "marked": "~4.2"
+    "marked": "~4.2",
+    "spark-md5": "^3.0.2"
   },
   "devDependencies": {
     "@types/ejs": "^3.1.2",
     "@types/node": "^20.4.4",
+    "@types/spark-md5": "^3.0.4",
     "ejs": "^3.1.9"
   }
 }

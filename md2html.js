@@ -1,6 +1,4 @@
-/**
- * 将当前目录下的md文件夹里的md文件；编译成html文件并输出到.vuepress/public/html文件夹下面
- */
+/* 将当前目录下的md文件夹里的md文件；编译成html文件并输出到.vuepress/public/html文件夹下面 */
 const path = require('path')
 const fs = require('fs')
 const vm = require('vm')
@@ -8,6 +6,7 @@ const { marked } = require('marked')
 const { generateIndexHtml } = require('./generate')
 const deleteFolderRecursive = require('./delete')
 const copypdf = require('./copypdf')
+const SparkMD5 = require('spark-md5')
 
 deleteFolderRecursive('./output')
 
@@ -38,10 +37,18 @@ function readFile(path, filesList) {
   }
 }
 
-/**
- * 模板引擎方法
- * 使用node的vm 模块
- */
+/* 生成hash */
+const generateHash = (fileCtt) => {
+  spark = new SparkMD5()
+  // spark = new SparkMD5.ArrayBuffer()
+  // spark.append(fs.readFileSync('./index.html'))
+  spark.append(fileCtt)
+  return spark.end()
+}
+// generateHash()
+
+/* 模板引擎方法
+使用 node 的 vm 模块 */
 const templateCompile = (template, data) => {
   // const vm = require('vm')
   return vm.runInNewContext(`\`${template}\``, data)
@@ -67,7 +74,8 @@ const md2html = ({ theme, inputPath, outputPath }) => {
       css: theme
     }
     const compiledHtml = templateCompile(templateHtml, contextData)
-    fs.writeFileSync(`${outputPath}/${htmlName}.html`, compiledHtml)
+    const hash = generateHash(compiledHtml)
+    fs.writeFileSync(`${outputPath}/${htmlName}.${hash.substring(0, 7)}.html`, compiledHtml)
   }
 }
 
@@ -91,4 +99,4 @@ setTimeout(() => {
   readMd2htmlFile({
     inputPath: path.resolve(__dirname, './output')
   })
-}, 2000);
+}, 1000);
