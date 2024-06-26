@@ -8,13 +8,9 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>online</title>
   <style>
-    body {
-      text-align: center;
-    }
-
-    a {
-      display: block;
+    .space {
       margin: 10px 0;
+      text-align: center;
     }
   </style>
   <script src="pdf_view/build/pdf.js"></script>
@@ -25,13 +21,17 @@
 <body>
   <%_ list.forEach((item)=>{ -%>
     <%_ if (item.fileType==='pdf' ) { -%>
-      <a href="<%= item.url %>" target="_blank">
-        <%= item.txt %>
-      </a>
-      <%_ } else { -%>
-        <a href="<%= 'output/' + item.name %>" target="_blank">
+      <p class="space">
+        <a href="<%= item.url %>" target="_blank">
           <%= item.txt %>
         </a>
+      </p>
+      <%_ } else { -%>
+        <p class="space">
+          <a href="<%= 'output/' + item.name %>" target="_blank">
+            <%= item.txt %>
+          </a>
+        </p>
         <%_ } -%>
           <%_ }) -%>
 </body>
