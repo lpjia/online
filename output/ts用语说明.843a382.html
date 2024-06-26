@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <!-- 文档标题-->
+  <title>ts用语说明</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+  <!-- theme1用引号包着也能被正确替换 -->
+  <link rel="stylesheet" href="../html-component/theme1.css">
+</head>
+
+<body>
+  <style>
+    body {
+      padding: 0 10px;
+    }
+  </style>
+  <!-- 插入主题样式 -->
+  <!-- <style>
+    theme1
+  </style> -->
+  <!-- 插入marked转换后的html -->
+  <div class="markdown-body"><h3 id="ts用语">ts用语</h3>
+<p>类型标注
+类型演算</p>
+<p>类型别名 定义type
+接口 interface
+抽象类 abstract
+工具类型
+类型操作符 keyof typeof
+联合类型 |
+交叉类型 &amp;
+类型推导
+类型推断 infer
+类型收缩
+类型安全 协变 逆变
+类型断言 as
+赋值断言 非空断言 !
+索引签名
+索引访问类型 []
+字面量类型或值类型
+字符串字面量类型
+类装饰器 属性~ 方法~ 参数~ 访问器~</p>
+<p>非空断言, 排除null和undefined, 一般用于该成员一定存在</p>
+<p>泛型是用来关联的, 谁和谁之间有某种关联, 用泛型
+泛型指使用时才定义类型，即类型可以像参数一样定义，主要解决类、接口、函数的复用性，让它们可以处理多种类型。</p>
+<p>记住：类型参数是用来关联多个值之间的类型。如果一个类型参数只在函数签名里出现了一次，那它就没有跟任何东西产生关联。
+(如果一个类型参数仅仅出现在一个地方，强烈建议你重新考虑是否真的需要它)</p>
+<p>泛型 &lt;&gt;
+泛型变量(参数) T
+泛型约束 extends
+泛型-类型别名
+泛型-接口
+泛型-类</p>
+</div>
+</body>
+
+</html>
