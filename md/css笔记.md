@@ -694,7 +694,7 @@ background-image: url('')
 
 2. background-repeat
 
-background-repeat: no-repeat/repeat-x/repeat-y/repeat 默认
+background-repeat: no-repeat、repeat-x、repeat-y、repeat 默认
 
 默认情况下, 背景图会在X Y中进行重复
 
@@ -705,6 +705,8 @@ background-size: auto auto; 默认
 预设值: container、cover, 类似于 object-fit
 
 数值 百分比
+
+> 注意: 使用background简写时, positon/size 顺序不能乱
 
 4. background-position
 

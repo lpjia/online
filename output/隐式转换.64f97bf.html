@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <!-- 文档标题-->
+  <title>隐式转换</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+  <!-- theme1用引号包着也能被正确替换 -->
+  <link rel="stylesheet" href="../html-component/theme1.css">
+</head>
+
+<body>
+  <style>
+    body {
+      padding: 0 10px;
+    }
+  </style>
+  <!-- 插入主题样式 -->
+  <!-- <style>
+    theme1
+  </style> -->
+  <!-- 插入marked转换后的html -->
+  <div class="markdown-body"><h3 id="隐式转换">隐式转换</h3>
+<h4 id="">==</h4>
+<p>从上到下按照规则比较, 直到能得到确切结果为止</p>
+<ol>
+<li>两端类型相同, 比较值</li>
+<li>两端存在 NaN, 返回 false</li>
+<li>undefined 和 null 只有与自身比较, 或者互相比较时, 才会返回 true</li>
+<li>两端都是原始类型, 转换成数字比较</li>
+<li>一端是原始类型, 一端是对象类型, 把对象类型转换成原始类型后进入第1步</li>
+</ol>
+<blockquote>
+<p>对象如何转原始类型?</p>
+<ol>
+<li>如果对象拥有<span style="color: red;">[Symbol.toPrimitive]</span>方法, 调用该方法
+若该方法能得到原始值, 使用该原始值
+若得不到原始值, 抛出异常</li>
+<li>调用对象的<span style="color: red;">valueOf</span>方法
+若该方法能得到原始值, 使用该原始值
+若得不到原始值, 进入下一步</li>
+<li>调用对象的<span style="color: red;">toString</span>方法
+若该方法能得到原始值, 使用该原始值
+若得不到原始值, 抛出异常</li>
+</ol>
+</blockquote>
+</div>
+</body>
+
+</html>
